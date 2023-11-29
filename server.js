@@ -10,6 +10,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use('/user/', (req, res, next) => {
   res.show('forbidden.html');;
 });
@@ -21,8 +23,6 @@ app.get(['/', '/home'], (req, res) => {
 app.get('/about', (req, res) => {
   res.show('about.html')
 });
-
-app.use(express.static(path.join(__dirname, '/public')));
 
 
 app.use((req, res) => {
