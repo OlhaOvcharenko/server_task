@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const opn = require('opn');
 
 const app = express();
 
@@ -32,3 +33,5 @@ app.use((req, res) => {
 app.listen(8000, () => {
   console.log('Server is running on port: 8000');
 });
+
+opn('http://localhost:8000');
