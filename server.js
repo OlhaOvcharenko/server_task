@@ -6,7 +6,7 @@ const app = express();
 
 app.use((req, res, next) => {
   res.show = (name) => {
-    res.sendFile(path.join(__dirname, `/views/${name}/`));
+    res.sendFile(path.join(__dirname, `/views/${name}`));
   };
   next();
 });
